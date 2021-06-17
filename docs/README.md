@@ -6,11 +6,14 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- DOCS-IGNORE:end -->
 
-Under the app's name, you should explain the topic, giving a **brief description** of the **app's functionality** (what is it for?) in a store.
+This VTEX IO Pixel APP installs the HandTalk solution into your VTEX Storefront.
+Just install the APP using VTEX Toolbelt, configure it in the ADMIN, and voilá you will have Hugo and Maya in your website.
+Remember, to use this APP you need a HandTalk TOKEN. So, please go to HandTalk Website (www.handtalk.me) and get one. 
 
-Next, you can **add media** (either an image of a GIF) if possible, so that users can better understand how the app works in practice. 
+Cheers!
+![StoreFront Example](https://github.com/carloslimavtex/handtalk/blob/4851352dbafc958c143dab4257703d7fed67842f/.github/images/vtex-handtalk-store-01.png)
+![Admin Example](https://github.com/carloslimavtex/handtalk/blob/4851352dbafc958c143dab4257703d7fed67842f/.github/images/vtex-handtalk-admin-01.png)
 
-![Media Placeholder](https://user-images.githubusercontent.com/52087100/71204177-42ca4f80-227e-11ea-89e6-e92e65370c69.png)
 
 ## Configuration
 
