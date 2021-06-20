@@ -3,46 +3,41 @@
 <script>
   (function (doc) {
     console.log("## VTEX HANDTALK PIXEL APP CODE START");
-    var htEnabled = "{{settings.htEnabled}}";
+    const htEnabled = "{{settings.htEnabled}}";
     if (htEnabled===false || htEnabled==="false") {
       console.error('## Warning: HandTalk is currently disabled. Please enable it in the VTEX Admin - Installed Apps.');
       return
     }
-    var htToken = "{{settings.htToken}}";
+    const htToken = "{{settings.htToken}}";
     if (!htToken) {
       console.error('## Warning: No HandTalk Token (htToken) is defined. Please configure it in the VTEX Admin, after getting the TOKEN value from the HandTalk ADMIN Panel (https://account.handtalk.me/)');
       return
     }
-    var htAvatar = "{{settings.htAvatar}}" || "";
-    var htZIndex = "{{settings.htZIndex}}" || "";
-    var htDNT = "{{settings.htDNT}}" || "";
+    const htAvatar = "{{settings.htAvatar}}" || "";
+    const htZIndex = "{{settings.htZIndex}}" || "";
+    const htDNT = "{{settings.htDNT}}" || "";
     
-    var htLog = "{{settings.htLog}}";
+    const htLog = "{{settings.htLog}}";
     if (htLog) console.log(`## VTEX HANDTALK APP Configuration Values: htEnabled=${htEnabled},htToken=${htToken},htAvatar=${htAvatar},htZIndex=${htZIndex},htDNT=${htDNT}`);
 
-    var htScript = doc.createElement('script');
+    const htScript = doc.createElement('script');
     htScript.src = 'https://plugin.handtalk.me/web/latest/handtalk.min.js';
     htScript.async = true;
     htScript.id = 'HandTalkScriptID';
 
     htScript.onload = function () {
-      var htInitProps = {
+      const htInitProps = {
         token: `${htToken}`
       }
       if (htAvatar) htInitProps["avatar"] = `${htAvatar}`;
       if (htZIndex) htInitProps["zIndex"] = `${htZIndex}`;      
       if (htDNT) htInitProps["doNotTrack"] = `${htDNT}`;
       
-      var ht = new HT(htInitProps);
+      const ht = new HT(htInitProps);
       if (htLog) console.log(htInitProps);
     }
     doc.body.appendChild(htScript);
-
-    // var htInvoke = doc.createElement('script');
-    // htInvoke.text = `var ht = new HT({token: "${htToken}"});`;
-    // doc.body.appendChild(htInvoke);
-
     console.log("## VTEX HANDTALK PIXEL APP CODE FINISH");
 
-  })(document, 'script')
+  })(document)
 </script>
